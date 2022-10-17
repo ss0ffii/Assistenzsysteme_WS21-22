@@ -1,0 +1,255 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - Hi
+    - Hey!
+    - Hallo
+    - Guten Tag.
+    - guten tag!
+    - Guten Morgen
+    - Guten Nachmittag.
+    - Guten Abend!
+    - hello
+    - HALLO
+    - hi
+    - hallo
+    - gruessgott
+    - Grüß Gott.
+    - Gute Tag
+- intent: whoareyou
+  examples: |
+    - Wer bist du?
+    - Was bist du?
+    - Was tust du?
+    - wer bist du?
+- intent: goodbye
+  examples: |
+    - Machs gut!
+    - Schoenen Nachmittag!
+    - Schoenen Tag!
+    - Tschuess.
+    - Auf Wiederhören.
+    - Wiederhören.
+    - Tschau
+    - Ciao.
+    - Bis bald.
+    - Bis nächstes Mal!
+    - ciao
+    - Wiederhören
+- intent: specialoffer
+  examples: |
+    - Welche Sonderangebote gibt es?
+    - Haben Sie heute ein besonderes Angebot?
+    - Was ist sehr günstig?
+    - Gibt es etwas zu einem reduziertem Preis?
+    - Gibt es heute Sonderangebote?
+    - Sonderangebote
+    - Welche Sonderangebote gibt es heute
+    - Welche Sonderangebote gibt es heute?
+    - Es ist für einen Geburtstag
+- intent: help
+  examples: |
+    - Was machst du?
+    - Was muss ich tun?
+    - Kannst du mir helfen?
+    - Was kann ich hier machen?
+    - Gibt es eine Anleitung?
+    - Bitte erkläre mir, was ich machen muss.
+    - Ich brauche Unterstützung
+    - Was für eine Auswahl haben Sie?
+- intent: ask_order
+  examples: |
+    - Ist es möglich eine Bestellung aufzugeben?
+    - Kann ich bei dir bestellen?
+    - Kann ich etwas bestellen?
+- intent: order
+  examples: |
+    - Ich möchte etwas bestellen.
+    - Ich will eine Bestellung aufgeben.
+    - Ich möchte bestellen.
+    - Ich möchte eine Bestellung aufgeben!
+- intent: order_muffin
+  examples: |
+    - Ich möchte einen [Muffin](product) bestellen.
+    - [Zehn](quantity) [Muffins](product) bitte.
+    - Ich will [5](quantity) [Muffins](product) bestellen.
+    - Ich möchte einen [Muffin](product)
+    - Ich möchte [Muffins](product) bestellen
+    - Ich möchte ein paar [Muffins](product) bestellen.
+    - Ich würde gerne ein paar [Muffins](product) bestellen.
+    - Ich brauche ein paar [Muffins](product).
+    - Ich hätte gerne ein paar [Muffins](product).
+    - Ich möchte ein paar [Muffins](product).
+    - ich möchte einen [muffin](product) bestellen
+    - Ich würde gerne einen [Muffin](product) bestellen
+- intent: order_cake
+  examples: |
+    - Ich möchte einen [Kuchen](product) bestellen.
+    - Einen [Kuchen](product) bitte.
+    - Ich will einen [Kuchen](product) bestellen.
+    - Ich möchte [fünf](quantity) Stück [Kuchen](product) bestellen.
+    - Ich würde gerne [fünf](quantity) Stück [Kuchen](product) bestellen.
+    - Ich brauche [fünf](quantity) Stück [Kuchen](product).
+    - Ich hätte gerne [fünf](quantity) Stück [Kuchen](product).
+    - Ich möchte [fünf](quantity) Stück [Kuchen](product).
+    - Ich würde gerne einen [Kuchen](product) bestellen
+    - Ich möchte einen [Kuchen](product)
+- intent: order_tart
+  examples: |
+    - Ich möchte eine [Torte](product) bestellen.
+    - [Torte](product) bitte.
+    - Ich will [Torte](product) bestellen.
+    - Ich möchte eine [Torte](product) mit [Erdbeeren](ingredients) bestellen.
+    - Ich würde gerne eine [Torte](product) mit [Himbeeren](ingredients) bestellen.
+    - Ich brauche eine [Torte](product) mit [Heidelbeeren](ingredients).
+    - Ich hätte gerne eine [Torte](product) mit [Himbeeren](ingredients).
+    - Ich möchte eine [Torte](product) mit [Himbeeren](ingredients).
+    - Eine [Torte](product).
+    - Ich möchte eine [Torte](product) bestellen
+- intent: say_yes
+  examples: |
+    - Ja, natürlich.
+    - Natürlich.
+    - Okay.
+    - Okay, super!
+    - Das passt.
+    - Sehr gerne.
+    - Alles klar.
+    - Ja!
+    - Perfekt!
+    - Gut!
+    - Sehr gerne!
+    - Ja, das ist gut.
+    - Das hört sich sehr gut an!
+- intent: delivery
+  examples: |
+    - Zum Liefern bitte.
+    - Kann es geliefert werden?
+    - Senden Sie es mir bitte.
+    - Liefern
+- intent: pickup
+  examples: |
+    - Ich hole es ab.
+    - Ich werde vorbei kommen.
+    - Zum mitnehmen.
+    - Kann ich es abholen?
+    - Abholen.
+    - Ich werde ihn heute Abend abholen.
+- intent: schedule
+  examples: |
+    - Ich möchte es am [2021-11-21](date) abholen.
+    - Ich möchte es am [2021-11-21](date) um [14:00](time) Uhr abholen.
+    - Ich möchte es um [14:00](time) Uhr abholen.
+    - Ich möchte es heute um [14:00](time) Uhr abholen.
+    - Ich möchte es heute abholen.
+    - Ich möchte es am [Montag](day) abholen.
+    - Ich möchte es am [Montag](day) um [14:00](time) abholen.
+    - Ich hole es am [Montag](day) ab.
+    - Ich hole es heute um [14:00](time) Uhr ab.
+    - Ich hole es am [Montag](day) um [14:00](time) Uhr ab.
+    - Ich hole es am [2021-11-21](date) um [14:00](time) Uhr ab.
+    - Ich hole es heute ab.
+    - Ich hole es am [2021-11-21](date) ab.
+    - Ich hole es um [14:00](time) Uhr ab.
+    - Ich nehme es am [Montag](day).
+    - Ich nehme es heute um [14:00](time) Uhr.
+    - Ich nehme es am [Montag](day) um [14:00](time) Uhr.
+    - Ich nehme es am [2021-11-21](date) um [14:00](time) Uhr.
+    - Ich nehme es heute Uhr.
+    - Ich nehme es am [2021-11-21](date).
+    - Ich nehme es um [14:00](time) Uhr.
+- intent: product_service_info
+  examples: |
+    - Was bieten Sie an?
+    - Was verkaufen Sie?
+    - Was gibt es hier?
+    - Was wird hier produziert?
+    - Welche Dienstleistungen bieten Sie an?
+- intent: choose_quantity
+  examples: |
+    - Ich brauche [fünf](quantity) [Muffin](product).
+    - Ich hätte gerne [fünf](quantity) Stück [Kuchen](product).
+    - Ich möchte gerne [drei](quantity) Stück [Kuchen](product).
+    - Ich hätte gerne [neun](quantity) Stück [Kuchen](product).
+    - [neun](quantity).
+    - [5](quantity) Stück
+    - [6](quantity) Stück
+    - Nur [einen](quantity) bitte
+    - [einen](quantity)
+    - [4](quantity)
+- intent: choose_ingredients
+  examples: |
+    - Ich hätte gerne [Himbeeren](ingredients).
+    - Mit [Himbeeren](ingredients).
+    - ich möchte [himbeeren](ingredients)
+    - mit [schokolade](ingredients)
+    - [Schokolade](ingredients)
+    - Mit [Schokolade](ingredients) bitte.
+    - Bitte mit [Himbeeren](ingredients)
+    - [Erdbeeren](ingredients)
+    - mit Himbeeren
+    - Heidelbeere
+    - [himbeere](ingredients)
+    - mit [himbeere](ingredients)
+    - Mit [Heidelbeeren](ingredients)
+- intent: choose_allergens
+  examples: |
+    - Ist es möglich, dass es auch [nussfrei](allergens) gemacht wird?
+    - Bitte die [Torte](product) [laktosefrei](allergens) zubereiten.
+    - Bitte [glutenfrei](allergens)
+    - Bitte ohne [Laktose](ingredients)
+    - Sie sollen auch [laktosefrei](allergens) sein!
+    - Wenn es möglich wäre, ohne [Laktose](ingredients) zu sein.
+    - Können die ohne [Nüsse](ingredients) gebacken sein?
+    - Es muss auch [glutenfrei](allergens) gemacht werden.
+    - Ohne Gluten
+    - [glutenfrei](allergens)
+    - [glutenfrei](allergens) bitte
+    - Bitte ohne [Gluten](allergens)
+    - Ohne [Gluten](allergens) bitte
+    - [Keine](allergens) Allergene.
+    - [Keine](allergens) Allergene.
+    - [Nichts](allergens).
+    - [Keine](allergens) Besonderheiten.
+    - Nein, [keine](allergens) speziellen Anforderungen.
+- intent: choose_special_occasion
+  examples: |
+    - Ja, es ist für einen [Geburtstag](special_occasion).
+    - [Geburtstag](special_occasion)
+    - Für eine [Hochzeit](special_occasion)
+    - Ja, ich brauche ihn für eine [Party](special_occasion)
+- intent: choose_message
+  examples: |
+    - Happy Birthday
+    - Alles Gute zum Geburtstag
+    - Alles Gute zur Firmung
+    - Wir wünschen dir alles Gute zum Geburtstag!
+- intent: say_no
+  examples: |
+    - Nein.
+    - Nope
+    - nein
+    - ne
+    - Nee!
+    - Nein, danke!
+    - nein danke.
+    - neindanke
+    - Nein Danke!
+    - Nein
+- synonym: glutenfrei
+  examples: |
+    - ohne Gluten
+    - Gluten
+- synonym: laktosefrei
+  examples: |
+    - ohne Laktose
+    - ohne Milchprodukte
+- synonym: none
+  examples: |
+    - keine
+    - nichts
+- synonym: eins
+  examples: |
+    - einen
+    - eine

@@ -1,0 +1,259 @@
+version: "2.0"
+stories:
+- story: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_assistance
+- story: greet and help
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_assistance
+  - intent: help
+  - action: utter_help
+  - action: utter_further_assistance
+- story: greet and introduction
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_assistance
+  - intent: whoareyou
+  - action: utter_introduction
+  - action: utter_further_assistance
+- story: ask order
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_assistance
+  - intent: ask_order
+  - action: utter_confirm_ask_order
+- story: greet, special offer
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_assistance
+  - intent: specialoffer
+  - action: action_show_special_offers
+  - action: utter_further_assistance
+- story: greet, special offer and goodbye
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_assistance
+  - intent: specialoffer
+  - action: action_show_special_offers
+  - action: utter_further_assistance
+  - intent: goodbye
+  - action: utter_goodbye
+- story: greet, special offer and goodbye 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_assistance
+  - intent: specialoffer
+  - action: action_show_special_offers
+  - action: utter_further_assistance
+  - intent: thank
+  - action: utter_you_are_welcome
+  - action: utter_further_assistance
+  - intent: goodbye
+  - action: utter_goodbye
+- story: special offer and order
+  steps:
+  - intent: specialoffer
+  - action: action_show_special_offers
+  - action: utter_further_assistance
+  - intent: thank
+  - action: utter_you_are_welcome
+  - action: utter_further_assistance
+  - intent: order
+  - action: utter_ask_order
+- story: muffin order
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_assistance
+  - intent: order_muffin
+  - action: muffin_form
+  - active_loop: muffin_form
+  - active_loop: null
+  - action: utter_order_confirmation
+  - action: action_save_order_to_db
+  - action: utter_muffin_order_details
+  - action: action_reset_slots
+  - action: utter_need_something_else
+- story: cake order
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_assistance
+  - intent: order_cake
+    entities:
+    - product: Kuchen
+  - slot_was_set:
+    - product: Kuchen
+  - action: cake_form
+  - active_loop: cake_form
+  - slot_was_set:
+    - requested_slot: ingredients
+  - slot_was_set:
+    - ingredients: Erdbeeren
+  - slot_was_set:
+    - requested_slot: allergens
+  - slot_was_set:
+    - allergens: glutenfrei
+  - slot_was_set:
+    - requested_slot: special_occasion
+  - slot_was_set:
+    - special_occasion: Geburtstag
+  - slot_was_set:
+    - requested_slot: message
+  - slot_was_set:
+    - message: Alles Gute zum Geburtstag
+  - active_loop: null
+  - action: utter_order_confirmation
+  - action: action_save_order_to_db
+  - action: utter_cake_order_details
+  - action: action_reset_slots
+  - action: utter_need_something_else
+- story: tart order #nicht fertig
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_assistance
+  - intent: order_tart
+  - action: tart_form
+  - active_loop: tart_form
+  - active_loop: null
+  - action: utter_order_confirmation
+  - action: action_save_order_to_db
+  - action: utter_tart_order_details
+  - action: action_reset_slots
+  - action: utter_need_something_else
+- story: greet and order
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_assistance
+  - intent: order
+  - action: utter_ask_order
+- story: no further orders
+  steps:
+  - intent: say_no
+  - action: utter_ask_date
+  - intent: schedule
+  - action: utter_ask_delivery
+  - intent: pickup
+  - action: utter_confirm_order
+  - action: utter_summary
+  - intent: goodbye
+  - action: utter_goodbye
+- story: goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+- story: order muffin and cake
+  steps:
+  - intent: order
+  - action: utter_ask_order
+  - intent: order_muffin
+    entities:
+    - product: Muffin
+  - slot_was_set:
+    - product: Muffin
+  - action: muffin_form
+  - active_loop: muffin_form
+  - slot_was_set:
+    - requested_slot: ingredients
+  - slot_was_set:
+    - ingredients: Mango
+  - slot_was_set:
+    - requested_slot: quantity
+  - slot_was_set:
+    - quantity: '4'
+  - slot_was_set:
+    - requested_slot: allergens
+  - slot_was_set:
+    - allergens: glutenfrei
+  - active_loop: null
+  - action: utter_order_confirmation
+  - action: action_save_order_to_db
+  - action: utter_muffin_order_details
+  - action: action_reset_slots
+  - action: utter_need_something_else
+  - intent: say_yes
+  - action: utter_ask_order
+  - intent: order_cake
+    entities:
+    - product: Kuchen
+  - slot_was_set:
+    - product: Kuchen
+  - action: cake_form
+  - active_loop: cake_form
+  - slot_was_set:
+    - requested_slot: ingredients
+  - slot_was_set:
+    - ingredients: Erdbeeren
+  - slot_was_set:
+    - requested_slot: allergens
+  - slot_was_set:
+    - allergens: glutenfrei
+  - slot_was_set:
+    - requested_slot: special_occasion
+  - slot_was_set:
+    - special_occasion: Geburtstag
+  - active_loop: null
+  - action: utter_order_confirmation
+  - action: action_save_order_to_db
+  - action: utter_cake_order_details
+  - action: action_reset_slots
+  - action: utter_need_something_else
+  - intent: say_no
+  - action: utter_confirm_order
+  - action: utter_summary
+  - intent: goodbye
+  - action: utter_goodbye
+  
+
+- story: Complete Story Muffin 01
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_assistance
+  - intent: order_muffin
+    entities:
+    - product: Muffin
+  - slot_was_set:
+    - product: Muffin
+  - action: muffin_form
+  - active_loop: muffin_form
+  - slot_was_set:
+    - requested_slot: ingredients
+  - slot_was_set:
+    - ingredients: Heidelbeeren
+  - slot_was_set:
+    - requested_slot: quantity
+  - slot_was_set:
+    - quantity: '4'
+  - slot_was_set:
+    - requested_slot: allergens
+  - slot_was_set:
+    - allergens: laktosefrei
+  - active_loop: null
+  - action: utter_order_confirmation
+  - action: action_save_order_to_db
+  - action: utter_muffin_order_details
+  - action: action_reset_slots
+  - action: utter_need_something_else
+  - intent: say_no
+  - action: utter_ask_date
+  - intent: schedule
+  - action: utter_ask_delivery
+  - intent: pickup
+  - action: utter_confirm_order
+  - action: utter_summary
+  - intent: goodbye
+  - action: utter_goodbye

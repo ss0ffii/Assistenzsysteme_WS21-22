@@ -1,0 +1,18 @@
+# The folling files are excluded from the repository and will be created by the rasa installation process or running rasa.
+
+# folders
+models/
+rasa_venv/
+__pycache__/
+results/
+
+
+# files
+events.db
+events.db-shm
+events.db-wal
+rasa.db
+rasa.db-shm
+rasa.db-wal
+__init__.py
+out.log

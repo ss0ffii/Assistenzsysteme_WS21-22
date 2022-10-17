@@ -1,0 +1,113 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- whoareyou
+- order_muffin
+- order_tart
+- order_cake
+- say_yes
+- say_no
+- choose_ingredients
+- choose_quantity
+- choose_allergens
+- choose_special_occasion
+- choose_message
+- order
+- goodbye
+- help
+- ask_order
+- request_suggestion
+- delivery
+- pickup
+- schedule
+- product_service_info
+- specialoffer
+- thank
+entities:
+- allergens
+- date
+- day
+- ingredients
+- product
+- quantity
+- special_occasion
+- time
+- delivery
+slots:
+  product:
+    type: text
+    influence_conversation: true
+  ingredients:
+    type: text
+    influence_conversation: true
+  allergens:
+    type: categorical
+    values:
+      - glutenfrei
+      - laktosefrei
+      - nussfrei
+      - none
+    influence_conversation: true
+  quantity:
+    type: text
+    influence_conversation: true
+  message:
+    type: text
+    influence_conversation: true
+  delivery:
+    type: bool
+    influence_conversation: true
+  special_occasion:
+    type: text
+    influence_conversation: true
+  requested_slot:
+    type: text
+    influence_conversation: false
+actions:
+- action_show_special_offers
+- action_set_slot_message
+- action_reset_slots
+- action_save_order_to_db
+forms:
+  muffin_form:
+    required_slots:
+      ingredients:
+      - type: from_entity
+        entity: ingredients
+      quantity:
+      - type: from_entity
+        entity: quantity
+      allergens:
+      - type: from_entity
+        entity: allergens
+  cake_form:
+    required_slots:
+      ingredients:
+      - type: from_entity
+        entity: ingredients
+      allergens:
+      - type: from_entity
+        entity: allergens
+      special_occasion:
+      - type: from_entity
+        entity: special_occasion
+      message:
+      - type: from_entity
+        entity: message
+  tart_form:
+    required_slots:
+      ingredients:
+      - type: from_entity
+        entity: ingredients
+      allergens:
+      - type: from_entity
+        entity: allergens
+      special_occasion:
+      - type: from_entity
+        entity: special_occasion
+      message:
+      - type: from_entity
+        entity: message

@@ -1,0 +1,88 @@
+version: "2.0"
+responses:
+  utter_greet:
+    - text: Hallo!
+  utter_assistance:
+    - text: Wie kann ich Ihnen helfen?
+  utter_introduction:
+    - text: Ich bin Laura, Ihr persönlicher Bestellassistent.
+  utter_help:
+    - text: Sie können bei mir Bestellungen aufgeben. Sie können mich mich fragen, was wir verkaufen und welche Sonderangebote es heute gibt.
+  utter_say_yes:
+    - text: Ja.
+  utter_say_no:
+    - text: Nein.
+  utter_confirm:
+    - text: Ja, das geht.
+  utter_decline:
+    - text: Nein, das geht nicht.
+
+  utter_product_service_info:
+    - text: Aktuell verkaufen wir Kuchen, Torten und Muffins. Unsere Services sind Online-Bestellung, Lieferung und Partyservice.
+  utter_further_assistance:
+    - text: Kann ich sonst noch etwas für Sie tun?
+  utter_confirm_ask_order:
+    - text: Sie können einfach sagen, was Sie bestellen wollen.
+  utter_ask_order:
+    - text: Was wollen Sie bestellen?
+  utter_need_something_else:
+    - text: Möchten Sie noch etwas bestellen?
+  utter_delivery_question:
+    - text: Wollen Sie den {product} abholen?
+  
+  utter_ask_muffin_form_ingredients:
+    - text: Mit welchen Zutaten?
+  utter_ask_muffin_form_quantity:
+    - text: Wie viele {product}s?
+  utter_ask_muffin_form_allergens:
+    - text: Haben Sie Anforderungen bezüglich Allergien oder Unverträglichkeiten?
+
+  utter_ask_cake_form_ingredients:
+    - text: Mit welchen Zutaten?
+  utter_ask_cake_form_quantity:
+    - text: Wie viele {product}?
+  utter_ask_cake_form_allergens:
+    - text: Haben Sie Anforderungen bezüglich Allergien oder Unverträglichkeiten?
+  utter_ask_cake_form_special_occasion:
+    - text: Gibt es einen speziellen Anlass?
+  utter_ask_cake_form_message:
+    - text: Welche Beschriftung wollen Sie?
+
+  utter_ask_tart_form_ingredients:
+    - text: Mit welchen Zutaten?
+  utter_ask_tart_form_allergens:
+    - text: Haben Sie Anforderungen bezüglich Allergien oder Unverträglichkeiten?
+  utter_ask_tart_form_message:
+    - text: Welche Beschriftung wollen Sie? Geben Sie in Ihrer nächsten Nachricht nur den Text ein, der auf Ihrer Torte geschrieben werden soll.
+  utter_ask_tart_form_special_occasion:
+    - text: Gibt es einen speziellen Anlass?
+
+  utter_order_confirmation:
+    - text: "Ihre Bestellung wurde akzeptiert."
+  utter_muffin_order_details:
+    - text: "Zusammenfassung: {quantity} x {product} mit {ingredients}. Besonderheiten: {allergens}."
+  utter_cake_order_details:
+    - text: "Zusammenfassung: Einen {product} mit {ingredients}. Besonderheiten: {allergens}."
+  utter_tart_order_details:
+    - text: "Zusammenfassung: Eine {product} mit {ingredients}. Besonderheiten: {allergens}."
+  utter_ask_time:
+    - text: Um welche Uhrzeit wollen Sie Ihre Bestellung abholen?
+  utter_ask_date:
+    - text: Zu welchem Datum benötigen Sie Ihre Bestellung?
+  utter_ask_delivery:
+    - text: Wollen Sie Ihre Bestellung abholen oder liefern lassen?
+  utter_recommendation:
+    - text: Kann ich Ihnen unsere {product} empfehlen?
+  
+  utter_ask_number:
+    - text: Für wie viele Personen?
+  utter_confirm_order:
+    - text: Alles klar!
+  utter_summary:
+    - text: Ihre Bestellung wurde akzeptiert. Sie können die Details Ihrer Bestellung in ihrem Account noch einmal überprüfen.
+  utter_wish_good_day:
+    - text: Ich wünsche Ihnen noch einen schönen Tag.
+  utter_goodbye:
+    - text: Auf Wiedersehen!
+  utter_you_are_welcome:
+    - text: Gern geschehen.

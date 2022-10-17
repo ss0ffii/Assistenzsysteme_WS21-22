@@ -1,0 +1,67 @@
+version: "2.0"
+nlu:
+  - lookup: product
+    examples: |
+      - Kuchen
+      - Torte
+      - Muffin
+  - lookup: ingredients
+    examples: |
+      - Heidelbeeren
+      - Himbeere
+      - Schokolade
+      - Vanille
+      - Erdbeeren
+      - Karamel
+      - Nuss
+      - Laktose
+      - Gluten
+      - Nüsse
+      - Blaubeeren
+      - Bananen
+      - Kokosnuss
+      - Apfel
+      - Mango
+      - Zitrone
+      - Kaffee
+      - Aprikose
+      - Birne
+      - Datteln
+      - Kirsche
+      - Pflaume
+      - Pfirsiche
+      - Honig
+      - Ahorn Sirup
+  - lookup: allergens
+    examples: |
+      - nussfrei
+      - laktosefrei
+      - glutenfrei
+      - none
+  - lookup: special_occasion
+    examples: |
+      - Hochzeit
+      - Geburtstag
+      - Party
+  - lookup: quantity
+    examples: |
+      - eins
+      - zwei
+      - drei
+      - vier
+      - fünf
+      - sechs
+      - sieben
+      - acht
+      - neun
+      - zehn
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10

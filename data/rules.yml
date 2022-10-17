@@ -1,0 +1,93 @@
+version: "2.0"
+rules:
+  - rule: always show special offers whenever user asks
+    steps:
+      - intent: specialoffer
+      - action: action_show_special_offers
+      - action: utter_further_assistance
+
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: always greet the user
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: utter_assistance
+
+  # - rule: always ask the user for order
+  #   steps:
+  #     - intent: ask_order
+  #     - action: utter_confirm_ask_order
+  #     - action: utter_ask_order
+
+  # - rule: confirm_product
+  #   condition:
+  #     - slot_was_set:
+  #         - ingredients: true
+  #   steps:
+  #     - intent: order
+  #     - action: utter_confirm_order
+  #     - action: utter_ask_art
+
+  - rule: activate_muffin_form
+    steps:
+      - intent: order_muffin
+      - action: muffin_form
+      - active_loop: muffin_form
+
+  - rule: submit_muffin_form
+    condition:
+      - active_loop: muffin_form
+    steps:
+      - action: muffin_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: utter_order_confirmation
+      - action: action_save_order_to_db
+      - action: utter_muffin_order_details
+      - action: action_reset_slots
+      - action: utter_need_something_else
+
+  - rule: activate_cake_form
+    steps:
+      - intent: order_cake
+      - action: cake_form
+      - active_loop: cake_form
+
+  - rule: submit_cake_form
+    condition:
+      - active_loop: cake_form
+    steps:
+      - action: cake_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: utter_order_confirmation
+      - action: action_save_order_to_db
+      - action: utter_cake_order_details
+      - action: action_reset_slots
+      - action: utter_need_something_else
+
+  - rule: activate_tart_form
+    steps:
+      - intent: order_tart
+      - action: tart_form
+      - active_loop: tart_form
+
+  - rule: submit_tart_form
+    condition:
+      - active_loop: tart_form
+    steps:
+      - action: tart_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: utter_order_confirmation
+      - action: action_save_order_to_db
+      - action: utter_tart_order_details
+      - action: action_reset_slots
+      - action: utter_need_something_else
